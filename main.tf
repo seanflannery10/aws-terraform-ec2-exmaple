@@ -23,10 +23,11 @@ resource "aws_subnet" "my_subnet" {
 
 data "aws_ami" "packer_example" {
   most_recent = true
+  owners      = ["self"]
 
   filter {
     name   = "name"
-    values = ["myami-*"]
+    values = ["aws-*"]
   }
 
   filter {
